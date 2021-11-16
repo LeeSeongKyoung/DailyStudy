@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <javaScript>
+        var str = `2021-11-09 10:41:37 [http-nio-8088-exec-3][-0:0:0:0:0:0:0:1] DEBUG c.s.s.m.M.selNotiList: ==>  Preparing: SELECT ROW_NUMBER() over (ORDER BY FRST_REG_DTM) AS ROW_NUM, NOTI_KEY, NOTI_TITLE, NOTI_CN, FRST_REG_DTM FROM tb_noti_m M WHERE DEL_YN = 'N' AND PST_YN = 'Y' ORDER BY FRST_REG_DTM DESC LIMIT 10 
+        2021-11-09 10:41:37 [http-nio-8088-exec-3][-0:0:0:0:0:0:0:1] DEBUG c.s.s.m.M.selNotiList: ==> Parameters: 
+        2021-11-09 10:41:37 [http-nio-8088-exec-3][-0:0:0:0:0:0:0:1] DEBUG c.s.s.m.M.selNotiList: <==      Total: 0
+        2021-11-09 10:41:37 [http-nio-8088-exec-3][-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: MainService.selNotiList 실행 시간: 6 ms
+
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] INFO  c.s.s.c.LoginController: #### cmUserDTO: CmUserDTO(userId=matey, idIssuTrgtKey=null, userNm=null, userType=null, userMoblphono=null, userTelno=null, userEmail=null, userImgNm=null, userOrgFileNm=null, userFilePath=null, userFileUrl=null, userSttus=null, userSttusNm=null, userPswd=1111, pswdChageCycle=0, pswdExpDt=null, tmpPswdYn=null, pswdErrCnt=0, sysKey=null, typeGubn=null, isExpDt=false, profileImg=null, newProfileImg=null, frstRegDtm=, frstRegId=null, frstRegNm=null, fnlUpdtDtm=, fnlUpdtId=null, conectIps=null, conectIpArr=null, superMngr=false, changeTempPswd=null, delFile=null)
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selLoginUser: ==>  Preparing: SELECT A.USER_ID, A.ID_ISSU_TRGT_KEY, A.USER_NM, A.USER_PSWD, A.TMP_PSWD_YN, A.PSWD_ERR_CNT, A.SYS_KEY, A.USER_MOBLPHONO, A.USER_EMAIL, A.USER_TYPE, A.USER_TELNO, A.USER_IMG_NM, A.USER_ORG_FILE_NM, A.USER_FILE_PATH, A.USER_FILE_URL, A.USER_STTUS, A.AUTH_GROP_SEQ, A.PSWD_CHAGE_CYCLE, A.PSWD_EXP_DT, A.TMP_PSWD_YN, A.AUTH_GROP_NM, CASE WHEN A.PSWD_CHAGE_CYCLE = 0 OR (A.PSWD_CHAGE_CYCLE != 0 AND DATE(A.PSWD_EXP_DT) > NOW()) THEN TRUE ELSE FALSE END AS IS_EXP_DT, A.DEPT_NM, A.GRADE_SE_NM, A.CLASS_SE_NM FROM vi_user_m A WHERE A.USER_ID = ? AND A.SYS_KEY = ? 
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selLoginUser: ==> Parameters: matey(String), 057f6b1f-27f1-4177-89b0-159aaf1a788c(String)
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selLoginUser: <==      Total: 1
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmUserService.selLoginUser 실행 시간: 15 ms
+
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.pswdErrCntUpdtOnUser: ==>  Preparing: UPDATE tb_user_m SET PSWD_ERR_CNT = ? WHERE USER_ID = ? AND SYS_KEY = ? 
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.pswdErrCntUpdtOnUser: ==> Parameters: 0(Integer), matey(String), 057f6b1f-27f1-4177-89b0-159aaf1a788c(String)
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.pswdErrCntUpdtOnUser: <==    Updates: 1
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmUserService.pswdErrCntUpdt 실행 시간: 4 ms
+
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selPointObtainList: ==>  Preparing: SELECT OBTAIN_HIST_SEQ, USER_ID, OBTAIN_YEAR, DATE(OBTAIN_DTM) AS OBTAIN_DTM, OBTAIN_POINT, POINT_POLICY_KEY, CHAGE_RESN, ETC_INFO, SYS_KEY, FRST_REG_DTM, FRST_REG_ID, FNL_UPDT_DTM, FNL_UPDT_ID FROM tb_point_obtain_h WHERE SYS_KEY = ? AND OBTAIN_YEAR = ? AND USER_ID = ? AND POINT_POLICY_KEY = ? 
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selPointObtainList: ==> Parameters: 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), 2021(String), matey(String), 348bcadf-3058-11eb-853e-6c4b90224320(String)
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selPointObtainList: <==      Total: 1
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.insPointObtain: ==>  Preparing: INSERT INTO tb_point_obtain_h ( USER_ID, OBTAIN_YEAR, OBTAIN_DTM, OBTAIN_POINT, POINT_POLICY_KEY, CHAGE_RESN, SYS_KEY, FRST_REG_DTM, FRST_REG_ID ) VALUE ( ?, ?, NOW(), ?, ?, ?, ?, NOW(), ? ) 
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.insPointObtain: ==> Parameters: matey(String), 2021(String), 50(Integer), 348bcadf-3058-11eb-853e-6c4b90224320(String), 출석_1회(String), 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), matey(String)
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.insPointObtain: <==    Updates: 1
+        2021-11-09 10:41:52 [http-nio-8088-exec-9][-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmPointObtainService.insPointObtainProc 실행 시간: 35 ms
+
+        2021-11-09 15:20:54 [http-nio-8088-exec-2][matey-0:0:0:0:0:0:0:1] DEBUG c.s.c.u.AjaxView: View [AjaxView], model {data={"misnTipDs":"<div class=\"tipBox__slide\"><div class=\"tipBox__slideItem\"><p class=\"miss-1-1__tipTxt\">사람이 깨끗한 물을 먹어야 건강한 것 처럼 재배 작물에게도<br>양액이 매우 중요합니다. 우선 pH와 EC를 알아야 합니다.</p><img src=\"/images/miss/week01/miss_1_3/img_mission_1_3_tip01.jpg\" alt=\"\"></div><div class=\"tipBox__slideItem\"><img src=\"/images/miss/week01/miss_1_3/img_mission_1_3_tip02.jpg\" alt=\"\"></div><div class=\"tipBox__slideItem\"><p class=\"miss-1-1__tipTxt\">준비된 파종판을 포수시킬 양액을 처방하여 양액을 조성합니다.<br>이 때 EC 3.0 ~ 3.5, pH 5.7 ~ 5.8으로 맞춰줘야 합니다.<br>배양액이 준비되면 스프레이를 이용하여 파종판의 암면셀에 완전히(100%) 젖도록 배양액을 뿌려서 파종판을 준비합니다.</p><img src=\"/images/miss/week01/miss_1_3/img_mission_1_3_tip03.jpg\" alt=\"\"></div></div><div class=\"tipBox__slideNum\"></div>"}}
+        2021-11-09 15:29:25 [http-nio-8088-exec-6][matey-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selRequstMenu: ==>  Preparing: SELECT TMM.MENU_ID, TMM.SYS_CTGR_CD, TMM.PARNTS_MENU_ID, TMM.MENU_NM, TMM.MENU_URL, TMM.MENU_LEVEL, TMM.MENU_TYPE, TMM.EXPSR_SN, TMPM.PRGRM_SEQ, TMPM.PRGRM_NM, TMPM.PRGRM_URL, TMPM.PRGRM_SE, TMPM.AUTH_CHK FROM tb_menu_m AS TMM, tb_menu_prgrm_m AS TMPM WHERE TMM.MENU_ID = TMPM.MENU_ID AND TMM.SYS_CTGR_CD = ? AND TMM.USE_YN = 'Y' AND TMPM.SYS_KEY = ? AND TMPM.PRGRM_URL = ? AND TMPM.DEL_YN = 'N' AND TMPM.USE_YN = 'Y' 
+        2021-11-09 15:29:25 [http-nio-8088-exec-6][matey-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selRequstMenu: ==> Parameters: SE(String), 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), /se/ctvtsmlt/lobby.do(String)
+        2021-11-09 15:29:25 [http-nio-8088-exec-6][matey-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selRequstMenu: <==      Total: 1
+        2021-11-09 15:29:25 [http-nio-8088-exec-6][matey-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmMenuService.selRequstMenu 실행 시간: 4 ms
+
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] DEBUG c.s.s.c.CtrlSmltController: #### ctrlSmltPrctList.param: []
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selSuntime: ==>  Preparing: SELECT COALESCE(?, CURDATE()) AS COLCT_DT, (CASE WHEN A.CNT > 0 THEN (SELECT X.SUNRISE_TM FROM tb_wethr_m X WHERE COLCT_DT = COALESCE(?, CURDATE()) AND SYS_KEY = ? ) ELSE '0600' END) SUNRISE_TM, (CASE WHEN A.CNT > 0 THEN (SELECT X.SUNSET_TM FROM tb_wethr_m X WHERE COLCT_DT = COALESCE(?, CURDATE()) AND SYS_KEY = ? ) ELSE '1900' END) SUNSET_TM, (CASE WHEN A.CNT > 0 THEN (SELECT DATE_FORMAT(DATE_ADD(DATE_FORMAT(CONCAT(COALESCE(?, CURDATE()),'-',SUBSTRING(SUNRISE_TM, 1, 2),'-',SUBSTRING(SUNRISE_TM, 3, 2)), '%Y-%m-%d-%H-%i'), INTERVAL -4 hour), '%Y-%m-%d-%H-%i') FROM tb_wethr_m X WHERE COLCT_DT = COALESCE(?, CURDATE()) AND SYS_KEY = ? ) ELSE DATE_FORMAT(DATE_ADD(DATE_FORMAT(CONCAT(COALESCE(?, CURDATE()),'-06-00'), '%Y-%m-%d-%H-%i'), INTERVAL -4 hour), '%Y-%m-%d-%H-%i') END) BEFORE_SUNRISE_TIME, (CASE WHEN A.CNT > 0 THEN (SELECT DATE_FORMAT(DATE_ADD(DATE_FORMAT(CONCAT(COALESCE(?, CURDATE()),'-',SUBSTRING(SUNRISE_TM, 1, 2),'-',SUBSTRING(SUNRISE_TM, 3, 2)), '%Y-%m-%d-%H-%i'), INTERVAL 4 hour), '%Y-%m-%d-%H-%i') FROM tb_wethr_m X WHERE COLCT_DT = COALESCE(?, CURDATE()) AND SYS_KEY = ? ) ELSE DATE_FORMAT(DATE_ADD(DATE_FORMAT(CONCAT(COALESCE(?, CURDATE()),'-06-00'), '%Y-%m-%d-%H-%i'), INTERVAL 4 hour), '%Y-%m-%d-%H-%i') END) AFTER_SUNRISE_TIME, DATE_FORMAT(NOW(), '%H%i') AS COLCT_TM FROM (SELECT COUNT(COLCT_DT) AS CNT FROM tb_wethr_m X WHERE COLCT_DT = COALESCE(?, CURDATE()) AND SYS_KEY = ? ) A 
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selSuntime: ==> Parameters: null, null, 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), null, 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), null, null, 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), null, null, null, 057f6b1f-27f1-4177-89b0-159aaf1a788c(String), null, null, 057f6b1f-27f1-4177-89b0-159aaf1a788c(String)
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] DEBUG c.s.c.m.C.selSuntime: <==      Total: 1
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmCtrlSmltService.selSuntime 실행 시간: 4 ms
+
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmCtrlSmltService.ctrlJsonGraphData 실행 시간: 2 ms
+
+        2021-11-09 15:55:17 [http-nio-8088-exec-6][teacher-0:0:0:0:0:0:0:1] INFO  c.s.c.c.a.PerformAopConfig: CmCtrlSmltService.ctrlJsonGraphData 실행 시간: 0 ms`;
+
+        var regExr1 = /(?<=Preparing:[ ]+)(?:SELECT|UPDATE|DELETE|INSERT).+\n/g;  // sql
+        var regExr2 = /(?<=Parameters:[ ]+).*/g; //parameters
+
+
+        // ** sql 정규식 결과값 배열로 만들기
+        var sqlStr = str.match(regExr1);
+        // ** parameters 정규식 결과값 배열로 만들기
+        var parameterStr = str.match(regExr2);
+
+        // parameterStr split으로 나누고 (String)일 경우 문자열로 변환 후
+        // (String)(Integer)제거
+        for (var i=0; i<parameterStr.length; i++) {
+            parameterStr[i] = parameterStr[i].split(', ');
+
+            for (var j=0; j<parameterStr[i].length; j++) {
+
+                if(parameterStr[i][j].includes('(String)')){
+                    parameterStr[i][j] = "'" + parameterStr[i][j] + "'";
+                }
+        
+                parameterStr[i][j] = parameterStr[i][j].replace(/(\([A-Z]\w+\))/g ,'');
+            }
+        }
+
+        // 추출한 parameterStr값을 sqlStr ? 에 대입하기
+        // ;으로 대체하는 sqlStr 출력문 실행 
+        for(var i=0; i<parameterStr.length; i++) {
+            for(var j=0; j<parameterStr[i].length; j++) {
+                sqlStr[i] = sqlStr[i].replace('?',parameterStr[i][j]).replace(' \n',';');
+            }
+        }
+        console.log(sqlStr);
+
+    </javaScript>
+</body>
+</html>
