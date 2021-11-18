@@ -1,15 +1,14 @@
 package hello.hellospring.domain;
 
-/**
- * <pre>
- *
- * </pre>
- *
- * @author Jeong JaeUk
- */
+import javax.persistence.*;
+
+@Entity
 public class Member {
 
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String name;
 
 	public Long getId() {
