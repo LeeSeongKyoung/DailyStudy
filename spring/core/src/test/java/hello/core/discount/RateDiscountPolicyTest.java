@@ -6,14 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
-/**
- * <pre>
- *
- * </pre>
- *
- * @author Jeong JaeUk
- */
-public class RateDiscountPolicyTest {
+
+class RateDiscountPolicyTest {
 
 	RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
@@ -27,6 +21,7 @@ public class RateDiscountPolicyTest {
 		// then
 		assertThat(discount).isEqualTo(1000);
 	}
+
 	@Test
 	@DisplayName("VIP가 아니면 할인이 적용되지 않아야 한다.")
 	void vip_x(){

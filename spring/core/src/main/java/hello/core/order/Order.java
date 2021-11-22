@@ -1,12 +1,5 @@
 package hello.core.order;
 
-/**
- * <pre>
- *
- * </pre>
- *
- * @author Jeong JaeUk
- */
 public class Order {
 
 	private Long memberId;

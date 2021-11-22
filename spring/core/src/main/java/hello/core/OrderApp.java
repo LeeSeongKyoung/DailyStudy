@@ -10,15 +10,8 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * <pre>
- *
- * </pre>
- *
- * @author Jeong JaeUk
- */
-public class OrderApp {
 
+public class OrderApp {
 	public static void main(String[] args){
 		// AppConfig appConfig = new AppConfig();
 		// MemberService memberService = appConfig.memberService();
