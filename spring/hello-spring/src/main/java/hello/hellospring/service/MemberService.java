@@ -17,7 +17,7 @@ public class MemberService {
 	// 회원서비스를 만드려면 회원 repository가 필요
 	private final MemberRepository memberRepository;
 
-	// 외부에서 넣을 수 있도록
+	// 외부에서 넣을 수 있도록(DI)
 	// constructor 생성
 //	@Autowired
 	public MemberService(MemberRepository memberRepository) {
