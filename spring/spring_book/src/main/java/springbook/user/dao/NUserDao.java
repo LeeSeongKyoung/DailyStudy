@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class NUserDao extends UserDao {  
+//public class NUserDao extends UserDao {
+public class NUserDao {
 	// UserDao를 추상화해서 진행한 클래스
 /*
 	public Connection getConnection() throws ClassNotFoundException, SQLException
