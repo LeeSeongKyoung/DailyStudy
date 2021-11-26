@@ -2,10 +2,7 @@ package springbook.user.run;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import springbook.user.dao.ConnectionMaker;
-import springbook.user.dao.DConnectionMaker;
-import springbook.user.dao.DaoFactoty;
-import springbook.user.dao.UserDao;
+import springbook.user.dao.*;
 import springbook.user.domain.User;
 
 import java.sql.SQLException;
@@ -19,7 +16,7 @@ public class UserDaoTest {
 		// 1. UserDao 생성 2. 사용할 ConnectionMaker 타입의 오브젝트 제공. 결국 두 오브젝트 사이의 의존관계 설정효과
 
 		// ApplicationContext의 getBean이라는 메소드를 이용해 UserDao의 오브젝트를 가져올 수 있음 p97
-		ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactoty.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
 
 
 		// 제어의 역전 p88 DaoFactory로 역할 분리
@@ -46,18 +43,21 @@ public class UserDaoTest {
 */
 
 		// DaoFactory를 여러번 호출했을 때 새로운 오브젝트가 만들어져서 돌아옴
-		DaoFactoty factoty = new DaoFactoty();
+		DaoFactory factory = new DaoFactory();
 
-		UserDao dao1 = factoty.userDao();
-		UserDao dao2 = factoty.userDao();
+		UserDao dao1 = factory.userDao();
+		UserDao dao2 = factory.userDao();
 
+		// 다른 값
 		System.out.println("dao1 = " + dao1);
 		System.out.println("dao2 = " + dao2);
 
 		UserDao dao3 = context.getBean("userDao", UserDao.class);
 		UserDao dao4= context.getBean("userDao", UserDao.class);
 
-
+		// 같은 값
+		System.out.println(dao3);
+		System.out.println(dao4);
 
 	}
 }

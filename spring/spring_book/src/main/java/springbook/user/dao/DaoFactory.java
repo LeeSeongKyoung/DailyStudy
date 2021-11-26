@@ -1,12 +1,12 @@
 package springbook.user.dao;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 // UserDao의 생성 책임을 맡은 팩토리 클래스
 @Configuration  // -> 애플리케이션 컨텍스트 또는 빈 팩토리가 사용할 설정 정보라는 표시
-public class DaoFactoty {
+public class DaoFactory {
+
 	/*public UserDao userDao(){  -> DaoFactoty에서 생성 역할 분리
 		ConnectionMaker connectionMaker = new DConnectionMaker();
 		UserDao userDao = new UserDao(connectionMaker);
@@ -38,4 +38,5 @@ public class DaoFactoty {
 	public ConnectionMaker connectionMaker(){
 		return new DConnectionMaker();
 	}
+
 }
