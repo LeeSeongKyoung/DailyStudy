@@ -30,6 +30,7 @@ public class ConfigurationsSingletonTest {
 		System.out.println("memberRepository = " + memberRepository);
 		// 셋 다 똑같은 값 출력
 
+
 		assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
 		assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
 	}
