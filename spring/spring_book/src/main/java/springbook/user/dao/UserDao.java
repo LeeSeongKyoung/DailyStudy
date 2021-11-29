@@ -13,11 +13,19 @@ public class UserDao {
 
 //	public UserDao(){
 	//싱글톤 패턴 적용시 public -> private로 전환
+/*
 	public UserDao(ConnectionMaker connectionMaker){ // 클라이언트가 미리 만들어둔 ConnectionMaker의 오브젝트를 전달 받을 수 있도록 파라미터 하나 추가
 //		simpleConnectionMaker = new SimpleConnectionMaker();
 //		connectionMaker = new DConnectionMaker();
 		this.connectionMaker = connectionMaker;
 //		this.connectionMaker = daoFactory.connectionMaker();
+	}
+*/
+	// p127 수정자 메소드 DI방식을 사용한 UserDao
+	// 기존 생성자 제거 후 작성
+	// DaoFctory의 코드도 함께 수정
+	public void setConnectionMaker(ConnectionMaker connectionMaker){
+		this.connectionMaker = connectionMaker;
 	}
 
 	public void add(User user) throws ClassNotFoundException, SQLException {

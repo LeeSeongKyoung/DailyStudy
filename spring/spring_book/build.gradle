@@ -15,8 +15,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtimeOnly 'com.h2database:h2'
+
+//	testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.7.0")
+//	testImplementation('org.junit.jupiter:junit-jupiter:5.7.0')
+//	testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
 
 }
 
