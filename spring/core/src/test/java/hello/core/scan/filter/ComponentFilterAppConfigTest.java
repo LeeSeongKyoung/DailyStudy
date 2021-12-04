@@ -29,12 +29,14 @@ public class ComponentFilterAppConfigTest {
 				() -> ac.getBean("beanB", BeanB.class));
 	}
 
+	// @Component면 충분하기 때문에, includeFilters 를 사용할 일은 거의 없다.
+
 	@Configuration
 	@ComponentScan(
+			// FilterType.ANNOTATION : 애노테이션 filterType을 만듦
 			includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class),
 			excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)
 	)
 	static class ComponentFilterAppConfig{
-
 	}
 }
