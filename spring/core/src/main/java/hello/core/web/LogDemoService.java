@@ -5,13 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 
-/**
- * <pre>
- *
- * </pre>
- *
- * @author SeongKyoung
- */
+
 @Service
 @RequiredArgsConstructor
 public class LogDemoService {

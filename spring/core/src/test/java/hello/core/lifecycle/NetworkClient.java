@@ -6,13 +6,7 @@ import org.springframework.beans.factory.InitializingBean;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-/**
- * <pre>
- *
- * </pre>
- *
- * @author SeongKyoung
- */
+
 public class NetworkClient  {
 
 	private String url;
