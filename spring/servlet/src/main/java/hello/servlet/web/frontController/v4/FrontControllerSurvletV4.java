@@ -17,7 +17,7 @@ import java.util.Map;
 
 @WebServlet( name="frontControllerSurvletV4", urlPatterns = "/front-controller/v4/*")
 public class FrontControllerSurvletV4 extends HttpServlet {
-
+	// 기존 구조에서 모델을 파라미터로 넘기고, 뷰의 논리이름을 반환
 	private Map<String, ControllerV4> controllerV1Map = new HashMap<>();
 
 	public FrontControllerSurvletV4() {
@@ -39,10 +39,12 @@ public class FrontControllerSurvletV4 extends HttpServlet {
 
 		Map<String, String> paramMap = createparamMap(request);
 		Map<String, Object> model = new HashMap<>(); // 추가
+		// 모델 객체를 프론트 컨트롤러에서 생성해서 넘겨줌
+		// 컨트롤러에서 모델 객체에 값을 담으면 여기에 그대로 담겨있게 됨
 
 		String viewName = controller.process(paramMap, model);
-
 		MyView view = viewResolver(viewName);
+		// 컨트롤러가 직접 뷰의 논리 이름을 반환하므로 이 값을 사용해서 실제 물리 뷰를 찾을 수 있음
 		view.render(model, request, response);
 	}
 
