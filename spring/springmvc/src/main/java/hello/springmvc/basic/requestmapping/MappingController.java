@@ -12,7 +12,12 @@ public class MappingController {
 
 	private Logger log = LoggerFactory.getLogger(getClass());
 
-	@RequestMapping(value = "/hello-basic", method = RequestMethod.GET)
+	/**
+	 * 기본 요청
+	 * 둘다 허용 /hello-basic, /hello-basic/
+	 * HTTP 메서드 모두 허용 GET, HEAD, POST, PUT, PATCH, DELETE
+	 */
+	@RequestMapping(value = "/hello-basic")
 	public String helloBasic() {
 		log.info("helloBasic");
 		return "ok";
@@ -43,8 +48,11 @@ public class MappingController {
 		return "ok";
 	}
 
-	// 최근 HTTP API는 다음과 같이 리소스 경로에 식별자를 넣는 스타일을 선호한다
-	// PathVariable(경로 변수) 사용
+	/**
+	 * PathVariable 사용
+	 * 변수명이 같으면 생략 가능
+	 * @PathVariable("userId") String userId -> @PathVariable userId
+	 */
 	@GetMapping("/mapping/{userId}")
 	public String mappingPath(@PathVariable("userId") String data) {
 		log.info("mappingPath userId={}", data);
