@@ -1,4 +1,4 @@
-package hello.servlet.web.survlet;
+package hello.servlet.web.servlet;
 
 import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "memberListSurvlet" , urlPatterns = "/survlet/members")
-public class MemberListSurvlet extends HttpServlet {
+public class MemberListServlet extends HttpServlet {
 
 	private MemberRepository memberRepository = MemberRepository.getInstance();
 

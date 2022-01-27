@@ -16,11 +16,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @WebServlet( name="frontControllerSurvletV4", urlPatterns = "/front-controller/v4/*")
-public class FrontControllerSurvletV4 extends HttpServlet {
+public class FrontControllerServletV4 extends HttpServlet {
 	// 기존 구조에서 모델을 파라미터로 넘기고, 뷰의 논리이름을 반환
 	private Map<String, ControllerV4> controllerV1Map = new HashMap<>();
 
-	public FrontControllerSurvletV4() {
+	public FrontControllerServletV4() {
 		controllerV1Map.put("/front-controller/v4/members/new-form", new MemberFormControllerV4());
 		controllerV1Map.put("/front-controller/v4/members/save", new MemberSaveControllerV4());
 		controllerV1Map.put("/front-controller/v4/members", new MemberListControllerV4());

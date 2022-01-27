@@ -1,4 +1,4 @@
-package hello.servlet.web.survletmvc;
+package hello.servlet.web.servletmvc;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
