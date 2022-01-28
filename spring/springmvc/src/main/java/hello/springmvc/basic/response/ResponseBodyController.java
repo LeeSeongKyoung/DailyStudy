@@ -21,7 +21,6 @@ public class ResponseBodyController {
 	// HTML이나 뷰 템플릿을 사용해도 HTTP 응답 메시지 바디에 HTML 데이터가 담겨서 전달된다
 	// 여기서 설명하는 내용은 정적 리소스나 뷰 템플릿을 거치지 않고, 직접 HTTP 응답 메시지를 전달하는 경우
 
-
 	@GetMapping("/response-body-string-v1")
 	public void responseBodyV1(HttpServletResponse response) throws IOException {
 		response.getWriter().write("ok");
