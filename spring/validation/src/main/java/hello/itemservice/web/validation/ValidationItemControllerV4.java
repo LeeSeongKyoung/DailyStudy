@@ -68,7 +68,7 @@ public class ValidationItemControllerV4 {
         }
 
         // 성공 로직
-
+        // 폼 객체를 Item으로 변환
         Item item = new Item();
         item.setItemName(form.getItemName());
         item.setPrice(form.getPrice());
