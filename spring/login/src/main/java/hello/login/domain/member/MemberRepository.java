@@ -3,7 +3,6 @@ package hello.login.domain.member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.Option;
 import java.util.*;
 
 @Slf4j
@@ -14,8 +13,8 @@ public class MemberRepository {
     private static long sequence = 0L;
 
     public Member save(Member member) {
-        member.setId(sequence++);
-        log.info("save : member={}", member);
+        member.setId(++sequence);
+        log.info("save: member={}", member);
         store.put(member.getId(), member);
         return member;
     }
@@ -32,11 +31,9 @@ public class MemberRepository {
             }
         }
         return Optional.empty();*/
-
         return findAll().stream()
                 .filter(m -> m.getLoginId().equals(loginId))
                 .findFirst();
-
     }
 
     public List<Member> findAll() {

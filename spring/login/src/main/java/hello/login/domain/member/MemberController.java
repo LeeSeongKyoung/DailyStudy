@@ -23,11 +23,11 @@ public class MemberController {
     }
 
     @PostMapping("/add")
-    public String save(@Valid @ModelAttribute Member member, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+    public String save(@Valid @ModelAttribute Member member, BindingResult
+            result) {
+        if (result.hasErrors()) {
             return "members/addMemberForm";
         }
-
         memberRepository.save(member);
         return "redirect:/";
     }
