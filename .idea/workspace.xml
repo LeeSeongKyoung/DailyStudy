@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52d0e05f-abb4-4b85-8984-2f4bd5155993" name="Changes" comment="" />
+    <list default="true" id="52d0e05f-abb4-4b85-8984-2f4bd5155993" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/DailyStudy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/http.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/http/HTTP웹_기본지식_20201226.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/core/src/main/java/hello/core/member/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/core/src/main/java/hello/core/member/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/core/src/test/java/hello/core/scope/SingletonWithPrototypeTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/core/src/test/java/hello/core/scope/SingletonWithPrototypeTest1.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,10 +44,22 @@
       <option name="presentableId" value="Default" />
       <updated>1637281504112</updated>
       <workItem from="1637281506222" duration="151000" />
+      <workItem from="1652074195493" duration="117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

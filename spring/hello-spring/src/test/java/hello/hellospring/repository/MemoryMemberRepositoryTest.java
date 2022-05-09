@@ -1,6 +1,5 @@
 package hello.hellospring.repository;
 
-import hello.hellospring.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -23,7 +22,7 @@ class MemoryMemberRepositoryTest {
 		repository.clearStore();
 	}
 
-	@Test
+/*	@Test
 	public void save(){
 		Member member = new Member();
 		member.setName("spring");
@@ -64,6 +63,6 @@ class MemoryMemberRepositoryTest {
 		List<Member> result = repository.findAll();
 
 		assertThat(result.size()).isEqualTo(2);
-	}
+	}*/
 
 }
